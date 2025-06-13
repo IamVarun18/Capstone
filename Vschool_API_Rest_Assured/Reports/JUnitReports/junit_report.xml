@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Cucumber" time="6.323" tests="4" skipped="0" failures="0" errors="0">
+<testcase classname="CRUD Operation on Jsonplaceholder application" name="Get all posts" time="3.34">
+<system-out><![CDATA[
+Given I have a base URI of "https://api.vschool.io/%5byour_name%5d/todo/"...passed
+When I send a GET request to "/"............................................passed
+Then the response status code should be 200.................................passed
+]]></system-out>
+</testcase>
+<testcase classname="CRUD Operation on Jsonplaceholder application" name="Create post - #1.1" time="1.357">
+<system-out><![CDATA[
+Given I have a base URI of "https://api.vschool.io/%5byour_name%5d/todo/"...passed
+When I send a POST request to "/" with body as "{ \"title\": \"Buy Milk\", \"description\": \"2 Litres\", \"price\": 40, \"completed\": false }".passed
+Then the response time less than 5000.......................................passed
+]]></system-out>
+</testcase>
+<testcase classname="CRUD Operation on Jsonplaceholder application" name="Update the same post using Id - #1.1" time="0.752">
+<system-out><![CDATA[
+Given I have a base URI of "https://api.vschool.io/%5byour_name%5d/todo/"...passed
+When I send a PUT request to "/<Id>" with body as "{ \"title\": \"Buy Milk Updated\", \"description\": \"Full Cream\", \"price\": 50, \"completed\": true }".passed
+Then the response body should contain "Buy Milk Updated"....................passed
+]]></system-out>
+</testcase>
+<testcase classname="CRUD Operation on Jsonplaceholder application" name="Delete the post using Id" time="0.691">
+<system-out><![CDATA[
+Given I have a base URI of "https://api.vschool.io/%5byour_name%5d/todo/"...passed
+When I send a DELETE request to "/6643af841cfabf03c4d12345".................passed
+Then the response header "Content-Type" should be "application/json; charset=utf-8".passed
+]]></system-out>
+</testcase>
+</testsuite>
